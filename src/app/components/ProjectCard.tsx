@@ -3,12 +3,12 @@ import Image from 'next/image';
 import Arrow from './icons/Arrow';
 
 interface ProjectCardProps {
-  href: string;
-  image: string;
-  imageAlt: string;
-  badge: string;
-  title: string;
-  description: string;
+  readonly href: string;
+  readonly image: string;
+  readonly imageAlt: string;
+  readonly badge: string;
+  readonly title: string;
+  readonly description: string;
 }
 
 export default function ProjectCard({
@@ -58,7 +58,7 @@ export default function ProjectCard({
           {description}
         </p>
         <div className="flex items-center text-green-600 font-medium text-sm">
-          <span>Ver proyecto</span>
+          <span>Pruébalo tu mismo</span>
           <Arrow className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
         </div>
       </div>

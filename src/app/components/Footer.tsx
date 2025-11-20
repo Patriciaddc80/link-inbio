@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
-import Email from "./icons/Email";
-import Phone from "./icons/Phone";
+
 
 const InstagramIcon = () => (
   <svg stroke="none" fill="#E1306C" strokeWidth="0" viewBox="0 0 24 24" height="20" width="20" xmlns="http://www.w3.org/2000/svg">
@@ -46,29 +45,8 @@ const Footer = () => {
         >
           <InstagramIcon />
           <span className="font-medium">Sígueme en Instagram</span>
-        </motion.a>
-        
-        <motion.a
-          href="mailto:patriciadiaz.dev@gmail.com"
-          aria-label="Email"
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-all duration-300"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Email className="w-5 h-5" />
-          <span className="font-medium">patriciadiaz.dev@gmail.com</span>
-        </motion.a>
-        
-        <motion.a
-          href="tel:+34698222944"
-          aria-label="Teléfono"
-          className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-all duration-300"
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          <Phone className="w-5 h-5" />
-          <span className="font-medium">+34 698 222 944</span>
-        </motion.a>
+        </motion.a>  
+         
       </div>
     </footer>
   );

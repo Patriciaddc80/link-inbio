@@ -77,7 +77,7 @@ export default function Home() {
                     href="https://prototipo-wedding1.netlify.app/"
                     image="/images/invitaciones-digitales.webp"
                     imageAlt="Invitaciones Digitales"
-                    badge="INVITACIONES DIGITALES-DEMO"
+                    badge="INVITACIONES DIGITALES PARA BODAS - DEMO"
                     title="Invitaciones Digitales"
                     description="Invitaciones digitales únicas para tu boda. Personalizable, fácil de compartir por WhatsApp, email o redes sociales. Una forma moderna de compartir tu gran día con tus invitados."
                   />
