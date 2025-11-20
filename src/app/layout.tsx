@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "Link in bio instagram Patricia Diaz",
   description: "Link in Bio Instagram",
   verification: {
-    google: 'TU_CODIGO_DE_VERIFICACION_AQUI', // Pegarás aquí el código que te dé Search Console
+    google: 'zc8NNIxYwHpmBGn0uZmkaXuLaWsdtxZ6IsP6zR5CSww',
   },
   icons: {
     icon: [
