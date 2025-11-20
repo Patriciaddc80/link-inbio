@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: "Link in bio instagram Patricia Diaz",
   description: "Link in Bio Instagram",
   icons: {
-    icon: '/images/image-profile.jpg',
-    apple: '/images/image-profile.jpg',
+    icon: '/icon.jpg',
+    apple: '/icon.jpg',
   },
 };
 

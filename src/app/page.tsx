@@ -51,14 +51,6 @@ export default function Home() {
                   <SocialLinks />
                 </motion.div>
 
-                <motion.div
-                  initial={{ y: 20, opacity: 0, width: '100%' }}
-                  animate={{ y: 0, opacity: 1, width: '100%' }}
-                  transition={{ duration: 0.5, delay: 0.8 }}
-                >
-                  <LocationMap />
-                </motion.div>
-
                 {/* Action Buttons */}
                 <motion.div
                   className="w-full space-y-4 mt-4"
@@ -92,6 +84,18 @@ export default function Home() {
                   />
                 </motion.div>
               </div>
+            </div>
+          </motion.div>
+
+          {/* Location Map Section */}
+          <motion.div
+            className="bg-white"
+            initial={{ y: 20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: 1.0 }}
+          >
+            <div className="container mx-auto max-w-md px-6 pb-6">
+              <LocationMap />
             </div>
           </motion.div>
 
