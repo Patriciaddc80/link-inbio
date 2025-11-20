@@ -13,8 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://link-inbio.vercel.app'), // Reemplaza con tu dominio real si es diferente
   title: "Link in bio instagram Patricia Diaz",
   description: "Link in Bio Instagram",
+  verification: {
+    google: 'TU_CODIGO_DE_VERIFICACION_AQUI', // Pegarás aquí el código que te dé Search Console
+  },
   icons: {
     icon: [
       { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
