@@ -24,7 +24,7 @@ export default function SocialLinks() {
   const socialLinks = [
     { icon: SocialIcons.Email, href: 'mailto:patriciadiaz.dev@gmail.com', label: 'Email', color: 'hover:bg-[#EA4335]' },
     { icon: SocialIcons.Instagram, href: 'https://www.instagram.com/_patriciadiaz.dev/', label: 'Instagram', color: 'hover:bg-gradient-to-br hover:from-[#833AB4] hover:via-[#FD1D1D] hover:to-[#F77737]' },
-    { icon: SocialIcons.LinkedIn, href: 'https://patriciadiaz.dev', label: 'LinkedIn', color: 'hover:bg-[#0A66C2]' },
+    { icon: SocialIcons.LinkedIn, href: 'https://www.linkedin.com/in/patriciadiaz/', label: 'LinkedIn', color: 'hover:bg-[#0A66C2]' },
     { icon: SocialIcons.WhatsApp, href: 'https://wa.me/34698222944', label: 'WhatsApp', color: 'hover:bg-[#25D366]' },
   ];
 
