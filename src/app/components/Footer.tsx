@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 
 const InstagramIcon = () => (
@@ -45,8 +46,25 @@ const Footer = () => {
         >
           <InstagramIcon />
           <span className="font-medium">Sígueme en Instagram</span>
-        </motion.a>  
-         
+        </motion.a>
+        
+        {/* Instagram QR Code */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-2"
+        >
+          <div className="relative w-32 h-32 mx-auto bg-white p-2 rounded-lg shadow-lg">
+            <Image
+              src="/images/qrcode_instagram.fbcn13-1.fna.fbcdn.net.png"
+              alt="QR Code Instagram"
+              fill
+              className="object-contain rounded"
+            />
+          </div>
+          <p className="text-xs text-gray-500 mt-2">Escanea para seguirme</p>
+        </motion.div>
       </div>
     </footer>
   );
