@@ -4,13 +4,13 @@ import Verified from './icons/Verified';
 export default function Profile() {
   return (
     <motion.div
-      className="relative z-10 container mx-auto max-w-md px-6 pt-16 text-center"
+      className="relative z-10 container mx-auto max-w-md px-6 pt-16 pb-4 text-center"
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <motion.h1
-        className="text-4xl font-otterco font-bold mb-3 flex items-center justify-center"
+        className="text-4xl font-otterco font-bold mb-3 flex items-center justify-center relative z-20"
         initial={{ scale: 0.9, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}

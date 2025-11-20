@@ -46,6 +46,7 @@ export default function Home() {
                   initial={{ scale: 0.9, opacity: 0 }}
                   animate={{ scale: 1, opacity: 1 }}
                   transition={{ duration: 0.5, delay: 0.6 }}
+                  className="mt-4"
                 >
                   <SocialLinks />
                 </motion.div>

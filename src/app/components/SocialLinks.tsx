@@ -45,7 +45,7 @@ export default function SocialLinks() {
 
   return (
     <motion.div 
-      className="flex gap-4 mt-6"
+      className="flex gap-4 mt-6 relative z-0"
       variants={containerVariants}
       initial="hidden"
       animate="visible"
