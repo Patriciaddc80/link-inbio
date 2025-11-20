@@ -9,7 +9,6 @@ import Globe from './components/icons/Globe';
 import Footer from './components/Footer';
 import ProjectCard from './components/ProjectCard';
 import { motion } from 'framer-motion';
-// import Download from './components/icons/Download';
 
 
 export default function Home() {
@@ -80,7 +79,7 @@ export default function Home() {
                     imageAlt="Invitaciones Digitales"
                     badge="INVITACIONES DIGITALES-DEMO"
                     title="Invitaciones Digitales"
-                    description="Plataforma moderna para crear y personalizar invitaciones digitales para eventos especiales. Diseño elegante y fácil de usar."
+                    description="Crea invitaciones digitales únicas para tus eventos. Personaliza diseños, comparte fácilmente por WhatsApp, email o redes sociales. Una forma moderna y ecológica de invitar a tus invitados."
                   />
                 </motion.div>
               </div>
@@ -92,7 +91,7 @@ export default function Home() {
             className="bg-white"
             initial={{ y: 20, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5, delay: 1.0 }}
+            transition={{ duration: 0.5, delay: 1 }}
           >
             <div className="container mx-auto max-w-md px-6 pb-6">
               <LocationMap />
