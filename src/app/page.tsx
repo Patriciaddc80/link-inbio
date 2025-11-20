@@ -79,7 +79,7 @@ export default function Home() {
                     imageAlt="Invitaciones Digitales"
                     badge="INVITACIONES DIGITALES-DEMO"
                     title="Invitaciones Digitales"
-                    description="Crea invitaciones digitales únicas para tus eventos. Personaliza diseños, comparte fácilmente por WhatsApp, email o redes sociales. Una forma moderna y ecológica de invitar a tus invitados."
+                    description="Invitaciones digitales únicas para tu boda. Personalizable, fácil de compartir por WhatsApp, email o redes sociales. Una forma moderna de compartir tu gran día con tus invitados."
                   />
                 </motion.div>
               </div>
