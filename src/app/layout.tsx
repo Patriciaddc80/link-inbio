@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Link in bio instagram Patricia Diaz",
   description: "Link in Bio Instagram",
+  icons: {
+    icon: '/images/image-profile.jpg',
+    apple: '/images/image-profile.jpg',
+  },
 };
 
 export default function RootLayout({
