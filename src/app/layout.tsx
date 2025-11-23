@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import StructuredData from "./components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +14,69 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://link-inbio.vercel.app'), // Reemplaza con tu dominio real si es diferente
-  title: "Link in bio instagram Patricia Diaz",
-  description: "Link in Bio Instagram",
+  metadataBase: new URL('https://link-inbio.vercel.app'),
+  title: "Patricia Diaz - Desarrollo Web Profesional y Diseño Web para Pymes | Link in Bio",
+  description: "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas para impulsar tu presencia digital. Servicios de desarrollo web local.",
+  keywords: [
+    "desarrollo web",
+    "diseño web",
+    "páginas web para pymes",
+    "desarrollador web profesional",
+    "diseño web profesional",
+    "creación de páginas web",
+    "optimización web",
+    "presencia digital",
+    "desarrollo web local",
+    "diseño web local",
+    "Patricia Diaz",
+    "PatriciaDiaz.dev",
+    "desarrollo web España",
+    "diseño web España"
+  ],
+  authors: [{ name: "Patricia Diaz" }],
+  creator: "Patricia Diaz",
+  publisher: "PatriciaDiaz.dev",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "es_ES",
+    url: "https://link-inbio.vercel.app",
+    siteName: "PatriciaDiaz.dev",
+    title: "Patricia Diaz - Desarrollo Web Profesional y Diseño Web para Pymes",
+    description: "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas para impulsar tu presencia digital.",
+    images: [
+      {
+        url: "/images/imagen-perfil.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Patricia Diaz - Desarrolladora Web Profesional",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Patricia Diaz - Desarrollo Web Profesional y Diseño Web para Pymes",
+    description: "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas.",
+    images: ["/images/imagen-perfil.jpg"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "https://link-inbio.vercel.app",
+  },
   verification: {
     google: 'zc8NNIxYwHpmBGn0uZmkaXuLaWsdtxZ6IsP6zR5CSww',
   },
@@ -36,10 +97,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="es">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <StructuredData />
         {children}
       </body>
     </html>

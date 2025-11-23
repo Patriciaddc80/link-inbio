@@ -3,11 +3,13 @@ import Verified from './icons/Verified';
 
 export default function Profile() {
   return (
-    <motion.div
+    <motion.header
       className="relative z-10 container mx-auto max-w-md px-6 pt-16 pb-4 text-center"
       initial={{ y: 20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
+      itemScope
+      itemType="https://schema.org/Person"
     >
       <motion.h1
         className="text-4xl font-otterco font-bold mb-3 flex items-center justify-center relative z-20"
@@ -15,11 +17,11 @@ export default function Profile() {
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.2 }}
       >
-        <span className='flex items-center gap-2'>
+        <span className='flex items-center gap-2' itemProp="name">
           <span className="bg-gradient-to-r from-gray-900 via-green-900 to-green-900 bg-clip-text text-transparent">
             PatriciaDiaz.dev
           </span>
-          <Verified className='text-green-600 w-6 h-6 animate-pulse-slow' />
+          <Verified className='text-green-600 w-6 h-6 animate-pulse-slow' aria-label="Verificado" />
         </span>
       </motion.h1>
       <motion.p
@@ -27,9 +29,10 @@ export default function Profile() {
         initial={{ y: 10, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
+        itemProp="description"
       >
         Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas para impulsar tu presencia digital.
       </motion.p>
-    </motion.div>
+    </motion.header>
   );
 }
