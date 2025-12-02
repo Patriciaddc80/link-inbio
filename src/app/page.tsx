@@ -1,19 +1,77 @@
 "use client";
 
-import Profile from './components/Profile';
-import SocialLinks from './components/SocialLinks';
-import LocationMap from './components/LocationMap';
-import Button from './components/Button';
-import Header from './components/Header';
-import Globe from './components/icons/Globe';
-import Footer from './components/Footer';
-import ProjectCard from './components/ProjectCard';
-import { motion } from 'framer-motion';
+import Profile from "./components/Profile";
+import SocialLinks from "./components/SocialLinks";
+import LocationMap from "./components/LocationMap";
+import Button from "./components/Button";
+import Header from "./components/Header";
+import Globe from "./components/icons/Globe";
+import Phone from "./components/icons/Phone";
+import Footer from "./components/Footer";
+import ProjectCard from "./components/ProjectCard";
+import { motion } from "framer-motion";
+import { useEffect } from "react";
 
+type CalendlyStatic = {
+  showPopupWidget?: (url: string) => void;
+  initPopupWidget?: (opts: { url: string }) => void;
+  closePopupWidget?: () => void;
+};
+
+declare global {
+  interface Window {
+    Calendly?: CalendlyStatic;
+  }
+}
 
 export default function Home() {
+  useEffect(() => {
+    // Preload Calendly widget script so popup opens quickly
+    if (typeof window === "undefined") return;
+    if (window.Calendly) return;
+    const existing = document.querySelector(
+      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+    );
+    if (existing) return;
+    const script = document.createElement("script");
+    script.src = "https://assets.calendly.com/assets/external/widget.js";
+    script.async = true;
+    document.body.appendChild(script);
+  }, []);
+
+  const openCalendlyPopup = (e?: React.MouseEvent) => {
+    e?.preventDefault();
+    const url = "https://calendly.com/patriciadiaz-dev/30min";
+    if (typeof window === "undefined") return;
+    const w = window;
+    if (w.Calendly && typeof w.Calendly.showPopupWidget === "function") {
+      w.Calendly.showPopupWidget(url);
+      return;
+    }
+    // Fallback: load script then open
+    const script = document.querySelector(
+      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
+    ) as HTMLScriptElement | null;
+    if (script) {
+      script.addEventListener("load", () => {
+        if (w.Calendly && typeof w.Calendly.showPopupWidget === "function") {
+          w.Calendly.showPopupWidget(url);
+        }
+      });
+    } else {
+      const s = document.createElement("script");
+      s.src = "https://assets.calendly.com/assets/external/widget.js";
+      s.async = true;
+      s.onload = () => {
+        if (w.Calendly && typeof w.Calendly.showPopupWidget === "function") {
+          w.Calendly.showPopupWidget(url);
+        }
+      };
+      document.body.appendChild(s);
+    }
+  };
   return (
-    <motion.main  
+    <motion.main
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.3 }}
@@ -23,7 +81,7 @@ export default function Home() {
         {/* Avatar Section with Gradient */}
         <Header />
 
-        <div className='bg-white relative'>
+        <div className="bg-white relative">
           {/* Profile Section */}
           <motion.div
             initial={{ y: 20, opacity: 0 }}
@@ -65,6 +123,17 @@ export default function Home() {
                   >
                     Visita mi portafolio
                   </Button>
+
+                  {/* Calendly - abre popup en lugar de navegar */}
+                  <Button
+                    href="https://calendly.com/patriciadiaz-dev/30min"
+                    leftIcon={Phone}
+                    variant="gradient"
+                    className="mt-2"
+                    onClick={openCalendlyPopup}
+                  >
+                    Agenda una cita
+                  </Button>
                 </motion.div>
 
                 {/* Project Card */}
@@ -86,6 +155,7 @@ export default function Home() {
               </div>
             </div>
           </motion.div>
+          {/* Eliminado botón duplicado de Calendly para evitar problemas de hidratación */}
 
           {/* Location Map Section */}
           <motion.div
