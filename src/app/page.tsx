@@ -10,66 +10,9 @@ import Phone from "./components/icons/Phone";
 import Footer from "./components/Footer";
 import ProjectCard from "./components/ProjectCard";
 import { motion } from "framer-motion";
-import { useEffect } from "react";
-
-type CalendlyStatic = {
-  showPopupWidget?: (url: string) => void;
-  initPopupWidget?: (opts: { url: string }) => void;
-  closePopupWidget?: () => void;
-};
-
-declare global {
-  interface Window {
-    Calendly?: CalendlyStatic;
-  }
-}
 
 export default function Home() {
-  useEffect(() => {
-    // Preload Calendly widget script so popup opens quickly
-    if (typeof window === "undefined") return;
-    if (window.Calendly) return;
-    const existing = document.querySelector(
-      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
-    );
-    if (existing) return;
-    const script = document.createElement("script");
-    script.src = "https://assets.calendly.com/assets/external/widget.js";
-    script.async = true;
-    document.body.appendChild(script);
-  }, []);
-
-  const openCalendlyPopup = (e?: React.MouseEvent) => {
-    e?.preventDefault();
-    const url = "https://calendly.com/patriciadiaz-dev/30min";
-    if (typeof window === "undefined") return;
-    const w = window;
-    if (w.Calendly && typeof w.Calendly.showPopupWidget === "function") {
-      w.Calendly.showPopupWidget(url);
-      return;
-    }
-    // Fallback: load script then open
-    const script = document.querySelector(
-      'script[src="https://assets.calendly.com/assets/external/widget.js"]'
-    ) as HTMLScriptElement | null;
-    if (script) {
-      script.addEventListener("load", () => {
-        if (w.Calendly && typeof w.Calendly.showPopupWidget === "function") {
-          w.Calendly.showPopupWidget(url);
-        }
-      });
-    } else {
-      const s = document.createElement("script");
-      s.src = "https://assets.calendly.com/assets/external/widget.js";
-      s.async = true;
-      s.onload = () => {
-        if (w.Calendly && typeof w.Calendly.showPopupWidget === "function") {
-          w.Calendly.showPopupWidget(url);
-        }
-      };
-      document.body.appendChild(s);
-    }
-  };
+  // no client-only scripts required for simple redirect links
   return (
     <motion.main
       initial={{ opacity: 0 }}
@@ -124,13 +67,13 @@ export default function Home() {
                     Visita mi portafolio
                   </Button>
 
-                  {/* Calendly - abre popup en lugar de navegar */}
+                  {/* Calendly - redirige a Calendly en la misma pestaña */}
                   <Button
                     href="https://calendly.com/patriciadiaz-dev/30min"
                     leftIcon={Phone}
                     variant="gradient"
                     className="mt-2"
-                    onClick={openCalendlyPopup}
+                    target="_self"
                   >
                     Agenda una cita
                   </Button>

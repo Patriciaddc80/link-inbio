@@ -11,6 +11,7 @@ interface ButtonProps {
   variant?: "primary" | "secondary" | "outlined" | "gradient";
   className?: string;
   disabled?: boolean;
+  target?: string;
 }
 
 const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -24,6 +25,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       variant = "primary",
       className = "",
       disabled = false,
+      target,
     },
     ref
   ) => {
@@ -77,13 +79,16 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
     };
 
     if (href) {
+      const linkTarget = target ?? "_blank";
+      const rel = linkTarget === "_blank" ? "noopener noreferrer" : undefined;
       return (
         <motion.a
           href={href}
           className={styles}
           onClick={onClick}
           ref={ref as React.Ref<HTMLAnchorElement>}
-          target="_blank"
+          target={linkTarget}
+          rel={rel}
           {...motionProps}
           {...(disabled && {
             "aria-disabled": true,
