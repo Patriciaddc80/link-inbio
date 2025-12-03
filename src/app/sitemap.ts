@@ -14,7 +14,7 @@ function fileLastModified(filePath: string): Date {
       .toString()
       .trim();
     if (out) return new Date(out);
-  } catch (e) {
+  } catch {
     // ignore and fallback
   }
   return new Date();
