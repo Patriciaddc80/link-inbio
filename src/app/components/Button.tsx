@@ -22,6 +22,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       onClick,
       leftIcon: LeftIcon,
       rightIcon: RightIcon = Arrow,
+      title,
       children,
       variant = "primary",
       className = "",
