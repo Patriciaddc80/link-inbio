@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import StructuredData from "./components/StructuredData";
+import VercelAnalytics from "./components/VercelAnalytics";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,9 +15,11 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://link-inbio.vercel.app'),
-  title: "Patricia Diaz - Desarrollo Web Profesional y Diseño Web para Pymes | Link in Bio",
-  description: "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas para impulsar tu presencia digital. Servicios de desarrollo web local.",
+  metadataBase: new URL("https://link-inbio.vercel.app"),
+  title:
+    "Patricia Diaz - Desarrollo Web Profesional y Diseño Web para Pymes | Link in Bio",
+  description:
+    "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas para impulsar tu presencia digital. Servicios de desarrollo web local.",
   keywords: [
     "desarrollo web",
     "diseño web",
@@ -31,7 +34,7 @@ export const metadata: Metadata = {
     "Patricia Diaz",
     "PatriciaDiaz.dev",
     "desarrollo web España",
-    "diseño web España"
+    "diseño web España",
   ],
   authors: [{ name: "Patricia Diaz" }],
   creator: "Patricia Diaz",
@@ -47,7 +50,8 @@ export const metadata: Metadata = {
     url: "https://link-inbio.vercel.app",
     siteName: "PatriciaDiaz.dev",
     title: "Patricia Diaz - Desarrollo Web Profesional y Diseño Web para Pymes",
-    description: "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas para impulsar tu presencia digital.",
+    description:
+      "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas para impulsar tu presencia digital.",
     images: [
       {
         url: "/images/imagen-perfil.jpg",
@@ -60,7 +64,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Patricia Diaz - Desarrollo Web Profesional y Diseño Web para Pymes",
-    description: "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas.",
+    description:
+      "Desarrollo web y diseño web profesional para pymes. Creación de páginas web modernas y optimizadas.",
     images: ["/images/imagen-perfil.jpg"],
   },
   robots: {
@@ -78,15 +83,15 @@ export const metadata: Metadata = {
     canonical: "https://link-inbio.vercel.app",
   },
   verification: {
-    google: 'zc8NNIxYwHpmBGn0uZmkaXuLaWsdtxZ6IsP6zR5CSww',
+    google: "zc8NNIxYwHpmBGn0uZmkaXuLaWsdtxZ6IsP6zR5CSww",
   },
   icons: {
     icon: [
-      { url: '/images/favicon-16x16.png', sizes: '16x16', type: 'image/png' },
-      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: "/images/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
     apple: [
-      { url: '/images/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: "/images/favicon-32x32.png", sizes: "32x32", type: "image/png" },
     ],
   },
 };
@@ -103,6 +108,7 @@ export default function RootLayout({
       >
         <StructuredData />
         {children}
+        <VercelAnalytics />
       </body>
     </html>
   );
