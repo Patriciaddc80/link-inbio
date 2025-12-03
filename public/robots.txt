@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://link-inbio.vercel.app/sitemap.xml
+Host: https://link-inbio.vercel.app
