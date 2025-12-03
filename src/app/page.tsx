@@ -63,6 +63,7 @@ export default function Home() {
                     href="https://patriciadiaz.dev/portfolio"
                     leftIcon={Globe}
                     variant="gradient"
+                    title="Visita el portafolio de Patricia Diaz"
                   >
                     Visita mi portafolio
                   </Button>
@@ -74,6 +75,7 @@ export default function Home() {
                     variant="gradient"
                     className="mt-2"
                     target="_self"
+                    title="Agenda una cita en Calendly"
                   >
                     Agenda una cita
                   </Button>

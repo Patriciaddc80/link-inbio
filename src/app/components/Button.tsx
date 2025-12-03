@@ -7,6 +7,7 @@ interface ButtonProps {
   onClick?: () => void;
   leftIcon?: React.ComponentType<{ className?: string }>;
   rightIcon?: React.ComponentType<{ className?: string }>;
+  title?: string;
   children: React.ReactNode;
   variant?: "primary" | "secondary" | "outlined" | "gradient";
   className?: string;
@@ -89,6 +90,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
           ref={ref as React.Ref<HTMLAnchorElement>}
           target={linkTarget}
           rel={rel}
+          title={title}
           {...motionProps}
           {...(disabled && {
             "aria-disabled": true,
@@ -107,6 +109,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
         className={styles}
         disabled={disabled}
         ref={ref as React.Ref<HTMLButtonElement>}
+        title={title}
         {...motionProps}
       >
         {content}
